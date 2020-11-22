@@ -1,0 +1,1603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B21A4C2-78F7-42A3-8209-0AB440816980}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyramidTimesWeb</RootNamespace>
+    <AssemblyName>PyramidTimesWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44348</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.9</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminEvent.cs">
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ContactData.cs">
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="EventRegistration.cs">
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminEventModel.cs" />
+    <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\EventRegistrationData.cs" />
+    <Compile Include="Models\HomePageViewModel.cs" />
+    <Compile Include="Models\SpeakerRegistration.cs" />
+    <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="PastEvent.cs">
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PyramidTimesWebEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PyramidTimesWebEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PyramidTimesWebEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PyramidTimesWebEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PyramidTimesWebEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SpeakerRegistration.cs">
+      <DependentUpon>PyramidTimesWebEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap\bootstrap.min.js" />
+    <Content Include="bootstrap\bootstrap_css.min.css" />
+    <Content Include="bootstrap\carousel.css" />
+    <Content Include="bootstrap\carousel.js" />
+    <Content Include="bootstrap\font-awesome.min.css" />
+    <Content Include="bootstrap\jquery.min.js" />
+    <Content Include="bootstrap\navigation.css" />
+    <Content Include="bootstrap\navigation.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\data\document.js" />
+    <Content Include="Content\data\styles.css" />
+    <Content Include="Content\files\1_home\data.js" />
+    <Content Include="Content\files\1_home\styles.css" />
+    <Content Include="Content\files\1_home__1_\data.js" />
+    <Content Include="Content\files\1_home__1_\styles.css" />
+    <Content Include="Content\files\1_home__1___1_\data.js" />
+    <Content Include="Content\files\1_home__1___1_\styles.css" />
+    <Content Include="Content\files\2_speakers\data.js" />
+    <Content Include="Content\files\2_speakers\styles.css" />
+    <Content Include="Content\files\3_speakers_registration\data.js" />
+    <Content Include="Content\files\3_speakers_registration\styles.css" />
+    <Content Include="Content\files\4_gallery_videos_\data.js" />
+    <Content Include="Content\files\4_gallery_videos_\styles.css" />
+    <Content Include="Content\files\4_gallery__images_\data.js" />
+    <Content Include="Content\files\4_gallery__images_\styles.css" />
+    <Content Include="Content\files\5_about_us\data.js" />
+    <Content Include="Content\files\5_about_us\styles.css" />
+    <Content Include="Content\files\6_contact\data.js" />
+    <Content Include="Content\files\6_contact\styles.css" />
+    <Content Include="Content\files\events\data.js" />
+    <Content Include="Content\files\events\styles.css" />
+    <Content Include="Content\files\event_registration_page\data.js" />
+    <Content Include="Content\files\event_registration_page\styles.css" />
+    <Content Include="Content\files\page_1\data.js" />
+    <Content Include="Content\files\page_1\styles.css" />
+    <Content Include="Content\files\speaker_popup\data.js" />
+    <Content Include="Content\files\speaker_popup\styles.css" />
+    <Content Include="Content\images\1_home\u0.png" />
+    <Content Include="Content\images\1_home\u100.svg" />
+    <Content Include="Content\images\1_home\u101.svg" />
+    <Content Include="Content\images\1_home\u12.svg" />
+    <Content Include="Content\images\1_home\u13.svg" />
+    <Content Include="Content\images\1_home\u20.svg" />
+    <Content Include="Content\images\1_home\u22.svg" />
+    <Content Include="Content\images\1_home\u25.svg" />
+    <Content Include="Content\images\1_home\u29.svg" />
+    <Content Include="Content\images\1_home\u33.svg" />
+    <Content Include="Content\images\1_home\u37.svg" />
+    <Content Include="Content\images\1_home\u41.svg" />
+    <Content Include="Content\images\1_home\u45.svg" />
+    <Content Include="Content\images\1_home\u49.svg" />
+    <Content Include="Content\images\1_home\u53.svg" />
+    <Content Include="Content\images\1_home\u57.svg" />
+    <Content Include="Content\images\1_home\u63.svg" />
+    <Content Include="Content\images\1_home\u7.png" />
+    <Content Include="Content\images\1_home\u71.png" />
+    <Content Include="Content\images\1_home\u77.png" />
+    <Content Include="Content\images\1_home\u80.png" />
+    <Content Include="Content\images\1_home\u83.png" />
+    <Content Include="Content\images\1_home\u84.png" />
+    <Content Include="Content\images\1_home\u85.png" />
+    <Content Include="Content\images\1_home\u86.png" />
+    <Content Include="Content\images\1_home\u87.png" />
+    <Content Include="Content\images\1_home\u9.png" />
+    <Content Include="Content\images\1_home\u90.png" />
+    <Content Include="Content\images\1_home\u93.png" />
+    <Content Include="Content\images\1_home\u95.svg" />
+    <Content Include="Content\images\1_home\u96.svg" />
+    <Content Include="Content\images\1_home\u99.svg" />
+    <Content Include="Content\images\1_home__1_\u107.png" />
+    <Content Include="Content\images\1_home__1_\u153.svg" />
+    <Content Include="Content\images\1_home__1_\u165.png" />
+    <Content Include="Content\images\1_home__1_\u177.svg" />
+    <Content Include="Content\images\1_home__1_\u181.svg" />
+    <Content Include="Content\images\1_home__1_\u208.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\Pyramids_small.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u0.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u100.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u102.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u103.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u104.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u104.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u105.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u106.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u107.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u107_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u108.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u109.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u110.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u111.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u112.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u112.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u113.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u113.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u114.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u114.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u115.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u115.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u116.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u116.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u117.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u117.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u118.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u119.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u119.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u12.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u120.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u121.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u121.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u122.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u124.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u124_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u125.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u125_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u128.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u129.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u131.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u16.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u2.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u20.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u24.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u28.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u32.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u36.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u4.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u42.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u43.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u46.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u47.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u50.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u51.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u52.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u53.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u54.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u56.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u57.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u58.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u59.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u61.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u61.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u62.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u63.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u64.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u65.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u69.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u70.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u70.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u71.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u71.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u72.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u72.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u72_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u73.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u74.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u74.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u77.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u78.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u8.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u81.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u82.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u85.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u86.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u87.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u87.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u88.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u88.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u89.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u89.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u90.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u90.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u91.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u91.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u91_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u92.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u96.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u97.png" />
+    <Content Include="Content\images\1_home__1___1_\regen\u98.svg" />
+    <Content Include="Content\images\1_home__1___1_\regen\u99.svg" />
+    <Content Include="Content\images\1_home__1___1_\u0.png" />
+    <Content Include="Content\images\1_home__1___1_\u100.svg" />
+    <Content Include="Content\images\1_home__1___1_\u101.svg" />
+    <Content Include="Content\images\1_home__1___1_\u102.svg" />
+    <Content Include="Content\images\1_home__1___1_\u103.svg" />
+    <Content Include="Content\images\1_home__1___1_\u104.svg" />
+    <Content Include="Content\images\1_home__1___1_\u105.svg" />
+    <Content Include="Content\images\1_home__1___1_\u106.svg" />
+    <Content Include="Content\images\1_home__1___1_\u107.svg" />
+    <Content Include="Content\images\1_home__1___1_\u108.svg" />
+    <Content Include="Content\images\1_home__1___1_\u109.svg" />
+    <Content Include="Content\images\1_home__1___1_\u110.svg" />
+    <Content Include="Content\images\1_home__1___1_\u111.png" />
+    <Content Include="Content\images\1_home__1___1_\u112.png" />
+    <Content Include="Content\images\1_home__1___1_\u112.svg" />
+    <Content Include="Content\images\1_home__1___1_\u113.png" />
+    <Content Include="Content\images\1_home__1___1_\u113.svg" />
+    <Content Include="Content\images\1_home__1___1_\u114.png" />
+    <Content Include="Content\images\1_home__1___1_\u114.svg" />
+    <Content Include="Content\images\1_home__1___1_\u115.png" />
+    <Content Include="Content\images\1_home__1___1_\u115.svg" />
+    <Content Include="Content\images\1_home__1___1_\u116.png" />
+    <Content Include="Content\images\1_home__1___1_\u116.svg" />
+    <Content Include="Content\images\1_home__1___1_\u117.svg" />
+    <Content Include="Content\images\1_home__1___1_\u119.svg" />
+    <Content Include="Content\images\1_home__1___1_\u12.svg" />
+    <Content Include="Content\images\1_home__1___1_\u120.svg" />
+    <Content Include="Content\images\1_home__1___1_\u121.png" />
+    <Content Include="Content\images\1_home__1___1_\u121.svg" />
+    <Content Include="Content\images\1_home__1___1_\u122.png" />
+    <Content Include="Content\images\1_home__1___1_\u124.svg" />
+    <Content Include="Content\images\1_home__1___1_\u124_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\u125.svg" />
+    <Content Include="Content\images\1_home__1___1_\u125_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\u128.svg" />
+    <Content Include="Content\images\1_home__1___1_\u129.svg" />
+    <Content Include="Content\images\1_home__1___1_\u16.svg" />
+    <Content Include="Content\images\1_home__1___1_\u2.svg" />
+    <Content Include="Content\images\1_home__1___1_\u20.svg" />
+    <Content Include="Content\images\1_home__1___1_\u24.svg" />
+    <Content Include="Content\images\1_home__1___1_\u28.svg" />
+    <Content Include="Content\images\1_home__1___1_\u32.svg" />
+    <Content Include="Content\images\1_home__1___1_\u36.svg" />
+    <Content Include="Content\images\1_home__1___1_\u4.svg" />
+    <Content Include="Content\images\1_home__1___1_\u42.svg" />
+    <Content Include="Content\images\1_home__1___1_\u43.svg" />
+    <Content Include="Content\images\1_home__1___1_\u46.svg" />
+    <Content Include="Content\images\1_home__1___1_\u47.svg" />
+    <Content Include="Content\images\1_home__1___1_\u50.svg" />
+    <Content Include="Content\images\1_home__1___1_\u51.png" />
+    <Content Include="Content\images\1_home__1___1_\u52.png" />
+    <Content Include="Content\images\1_home__1___1_\u53.svg" />
+    <Content Include="Content\images\1_home__1___1_\u54.svg" />
+    <Content Include="Content\images\1_home__1___1_\u56.svg" />
+    <Content Include="Content\images\1_home__1___1_\u57.svg" />
+    <Content Include="Content\images\1_home__1___1_\u58.png" />
+    <Content Include="Content\images\1_home__1___1_\u59.png" />
+    <Content Include="Content\images\1_home__1___1_\u61.png" />
+    <Content Include="Content\images\1_home__1___1_\u61.svg" />
+    <Content Include="Content\images\1_home__1___1_\u62.png" />
+    <Content Include="Content\images\1_home__1___1_\u63.png" />
+    <Content Include="Content\images\1_home__1___1_\u64.png" />
+    <Content Include="Content\images\1_home__1___1_\u65.png" />
+    <Content Include="Content\images\1_home__1___1_\u69.png" />
+    <Content Include="Content\images\1_home__1___1_\u70.png" />
+    <Content Include="Content\images\1_home__1___1_\u70.svg" />
+    <Content Include="Content\images\1_home__1___1_\u71.png" />
+    <Content Include="Content\images\1_home__1___1_\u71.svg" />
+    <Content Include="Content\images\1_home__1___1_\u72.png" />
+    <Content Include="Content\images\1_home__1___1_\u72.svg" />
+    <Content Include="Content\images\1_home__1___1_\u72_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\u73.png" />
+    <Content Include="Content\images\1_home__1___1_\u74.png" />
+    <Content Include="Content\images\1_home__1___1_\u74.svg" />
+    <Content Include="Content\images\1_home__1___1_\u8.svg" />
+    <Content Include="Content\images\1_home__1___1_\u83.svg" />
+    <Content Include="Content\images\1_home__1___1_\u84.svg" />
+    <Content Include="Content\images\1_home__1___1_\u85.svg" />
+    <Content Include="Content\images\1_home__1___1_\u86.svg" />
+    <Content Include="Content\images\1_home__1___1_\u87.png" />
+    <Content Include="Content\images\1_home__1___1_\u87.svg" />
+    <Content Include="Content\images\1_home__1___1_\u88.png" />
+    <Content Include="Content\images\1_home__1___1_\u89.png" />
+    <Content Include="Content\images\1_home__1___1_\u89.svg" />
+    <Content Include="Content\images\1_home__1___1_\u90.png" />
+    <Content Include="Content\images\1_home__1___1_\u90.svg" />
+    <Content Include="Content\images\1_home__1___1_\u91.png" />
+    <Content Include="Content\images\1_home__1___1_\u91.svg" />
+    <Content Include="Content\images\1_home__1___1_\u91_mouseOver.svg" />
+    <Content Include="Content\images\1_home__1___1_\u96.svg" />
+    <Content Include="Content\images\1_home__1___1_\u98.png" />
+    <Content Include="Content\images\1_home__1___1_\u98.svg" />
+    <Content Include="Content\images\1_home__1___1_\u99.svg" />
+    <Content Include="Content\images\2_speakers\regen\u100.png" />
+    <Content Include="Content\images\2_speakers\regen\u101.png" />
+    <Content Include="Content\images\2_speakers\regen\u102.png" />
+    <Content Include="Content\images\2_speakers\regen\u103.png" />
+    <Content Include="Content\images\2_speakers\regen\u104.png" />
+    <Content Include="Content\images\2_speakers\regen\u110.svg" />
+    <Content Include="Content\images\2_speakers\regen\u111.svg" />
+    <Content Include="Content\images\2_speakers\regen\u112.svg" />
+    <Content Include="Content\images\2_speakers\regen\u113.svg" />
+    <Content Include="Content\images\2_speakers\regen\u12.png" />
+    <Content Include="Content\images\2_speakers\regen\u122.png" />
+    <Content Include="Content\images\2_speakers\regen\u123.png" />
+    <Content Include="Content\images\2_speakers\regen\u124.png" />
+    <Content Include="Content\images\2_speakers\regen\u125.png" />
+    <Content Include="Content\images\2_speakers\regen\u126.svg" />
+    <Content Include="Content\images\2_speakers\regen\u127.svg" />
+    <Content Include="Content\images\2_speakers\regen\u130.svg" />
+    <Content Include="Content\images\2_speakers\regen\u131.svg" />
+    <Content Include="Content\images\2_speakers\regen\u132.svg" />
+    <Content Include="Content\images\2_speakers\regen\u133.svg" />
+    <Content Include="Content\images\2_speakers\regen\u134.svg" />
+    <Content Include="Content\images\2_speakers\regen\u135.svg" />
+    <Content Include="Content\images\2_speakers\regen\u136.svg" />
+    <Content Include="Content\images\2_speakers\regen\u137.svg" />
+    <Content Include="Content\images\2_speakers\regen\u138.svg" />
+    <Content Include="Content\images\2_speakers\regen\u139.svg" />
+    <Content Include="Content\images\2_speakers\regen\u140.svg" />
+    <Content Include="Content\images\2_speakers\regen\u141.svg" />
+    <Content Include="Content\images\2_speakers\regen\u142.svg" />
+    <Content Include="Content\images\2_speakers\regen\u143.svg" />
+    <Content Include="Content\images\2_speakers\regen\u144.svg" />
+    <Content Include="Content\images\2_speakers\regen\u145.svg" />
+    <Content Include="Content\images\2_speakers\regen\u146.svg" />
+    <Content Include="Content\images\2_speakers\regen\u147.svg" />
+    <Content Include="Content\images\2_speakers\regen\u148.svg" />
+    <Content Include="Content\images\2_speakers\regen\u149.png" />
+    <Content Include="Content\images\2_speakers\regen\u149.svg" />
+    <Content Include="Content\images\2_speakers\regen\u150.svg" />
+    <Content Include="Content\images\2_speakers\regen\u151.svg" />
+    <Content Include="Content\images\2_speakers\regen\u152.svg" />
+    <Content Include="Content\images\2_speakers\regen\u152_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u153.svg" />
+    <Content Include="Content\images\2_speakers\regen\u154.png" />
+    <Content Include="Content\images\2_speakers\regen\u154.svg" />
+    <Content Include="Content\images\2_speakers\regen\u155.svg" />
+    <Content Include="Content\images\2_speakers\regen\u156.svg" />
+    <Content Include="Content\images\2_speakers\regen\u157.svg" />
+    <Content Include="Content\images\2_speakers\regen\u157_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u16.png" />
+    <Content Include="Content\images\2_speakers\regen\u161.png" />
+    <Content Include="Content\images\2_speakers\regen\u162.png" />
+    <Content Include="Content\images\2_speakers\regen\u163.png" />
+    <Content Include="Content\images\2_speakers\regen\u164.png" />
+    <Content Include="Content\images\2_speakers\regen\u164.svg" />
+    <Content Include="Content\images\2_speakers\regen\u164_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u165.png" />
+    <Content Include="Content\images\2_speakers\regen\u165.svg" />
+    <Content Include="Content\images\2_speakers\regen\u165_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u166.svg" />
+    <Content Include="Content\images\2_speakers\regen\u166_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u167.svg" />
+    <Content Include="Content\images\2_speakers\regen\u167_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u168.svg" />
+    <Content Include="Content\images\2_speakers\regen\u168_mouseOver.svg" />
+    <Content Include="Content\images\2_speakers\regen\u178.png" />
+    <Content Include="Content\images\2_speakers\regen\u179.png" />
+    <Content Include="Content\images\2_speakers\regen\u180.png" />
+    <Content Include="Content\images\2_speakers\regen\u181.png" />
+    <Content Include="Content\images\2_speakers\regen\u2.svg" />
+    <Content Include="Content\images\2_speakers\regen\u20.png" />
+    <Content Include="Content\images\2_speakers\regen\u24.jpg" />
+    <Content Include="Content\images\2_speakers\regen\u28.png" />
+    <Content Include="Content\images\2_speakers\regen\u32.png" />
+    <Content Include="Content\images\2_speakers\regen\u36.png" />
+    <Content Include="Content\images\2_speakers\regen\u4.png" />
+    <Content Include="Content\images\2_speakers\regen\u77.png" />
+    <Content Include="Content\images\2_speakers\regen\u8.png" />
+    <Content Include="Content\images\2_speakers\regen\u81.svg" />
+    <Content Include="Content\images\2_speakers\u250.svg" />
+    <Content Include="Content\images\2_speakers\u252.png" />
+    <Content Include="Content\images\2_speakers\u255.svg" />
+    <Content Include="Content\images\2_speakers\u256.png" />
+    <Content Include="Content\images\2_speakers\u257.png" />
+    <Content Include="Content\images\2_speakers\u260.png" />
+    <Content Include="Content\images\2_speakers\u260.svg" />
+    <Content Include="Content\images\2_speakers\u261.png" />
+    <Content Include="Content\images\2_speakers\u262.png" />
+    <Content Include="Content\images\2_speakers\u264.png" />
+    <Content Include="Content\images\2_speakers\u265.png" />
+    <Content Include="Content\images\2_speakers\u265.svg" />
+    <Content Include="Content\images\2_speakers\u266.png" />
+    <Content Include="Content\images\2_speakers\u267.png" />
+    <Content Include="Content\images\2_speakers\u268.png" />
+    <Content Include="Content\images\2_speakers\u269.png" />
+    <Content Include="Content\images\2_speakers\u270.png" />
+    <Content Include="Content\images\2_speakers\u270.svg" />
+    <Content Include="Content\images\2_speakers\u271.png" />
+    <Content Include="Content\images\2_speakers\u272.jpg" />
+    <Content Include="Content\images\2_speakers\u272.png" />
+    <Content Include="Content\images\2_speakers\u273.png" />
+    <Content Include="Content\images\2_speakers\u274.png" />
+    <Content Include="Content\images\2_speakers\u274.svg" />
+    <Content Include="Content\images\2_speakers\u275.png" />
+    <Content Include="Content\images\2_speakers\u276.png" />
+    <Content Include="Content\images\2_speakers\u277.jpg" />
+    <Content Include="Content\images\2_speakers\u278.png" />
+    <Content Include="Content\images\2_speakers\u279.png" />
+    <Content Include="Content\images\2_speakers\u279.svg" />
+    <Content Include="Content\images\2_speakers\u280.png" />
+    <Content Include="Content\images\2_speakers\u280.svg" />
+    <Content Include="Content\images\2_speakers\u281.png" />
+    <Content Include="Content\images\2_speakers\u281.svg" />
+    <Content Include="Content\images\2_speakers\u282.jpg" />
+    <Content Include="Content\images\2_speakers\u282.png" />
+    <Content Include="Content\images\2_speakers\u283.png" />
+    <Content Include="Content\images\2_speakers\u284.png" />
+    <Content Include="Content\images\2_speakers\u285.png" />
+    <Content Include="Content\images\2_speakers\u286.png" />
+    <Content Include="Content\images\2_speakers\u287.jpg" />
+    <Content Include="Content\images\2_speakers\u287.png" />
+    <Content Include="Content\images\2_speakers\u288.png" />
+    <Content Include="Content\images\2_speakers\u289.png" />
+    <Content Include="Content\images\2_speakers\u290.png" />
+    <Content Include="Content\images\2_speakers\u291.png" />
+    <Content Include="Content\images\2_speakers\u292.jpg" />
+    <Content Include="Content\images\2_speakers\u292.png" />
+    <Content Include="Content\images\2_speakers\u293.png" />
+    <Content Include="Content\images\2_speakers\u294.png" />
+    <Content Include="Content\images\2_speakers\u295.png" />
+    <Content Include="Content\images\2_speakers\u296.jpg" />
+    <Content Include="Content\images\2_speakers\u296.png" />
+    <Content Include="Content\images\2_speakers\u297.png" />
+    <Content Include="Content\images\2_speakers\u298.png" />
+    <Content Include="Content\images\2_speakers\u299.png" />
+    <Content Include="Content\images\2_speakers\u300.png" />
+    <Content Include="Content\images\2_speakers\u301.jpg" />
+    <Content Include="Content\images\2_speakers\u302.jpg" />
+    <Content Include="Content\images\2_speakers\u303.jpg" />
+    <Content Include="Content\images\2_speakers\u304.png" />
+    <Content Include="Content\images\2_speakers\u305.png" />
+    <Content Include="Content\images\2_speakers\u306.png" />
+    <Content Include="Content\images\2_speakers\u307.png" />
+    <Content Include="Content\images\2_speakers\u308.png" />
+    <Content Include="Content\images\2_speakers\u309.png" />
+    <Content Include="Content\images\2_speakers\u310.png" />
+    <Content Include="Content\images\2_speakers\u311.png" />
+    <Content Include="Content\images\2_speakers\u313.png" />
+    <Content Include="Content\images\2_speakers\u314.png" />
+    <Content Include="Content\images\2_speakers\u315.png" />
+    <Content Include="Content\images\2_speakers\u325.png" />
+    <Content Include="Content\images\2_speakers\u327.svg" />
+    <Content Include="Content\images\2_speakers\u329.png" />
+    <Content Include="Content\images\2_speakers\u330.png" />
+    <Content Include="Content\images\2_speakers\u333.png" />
+    <Content Include="Content\images\2_speakers\u337.png" />
+    <Content Include="Content\images\2_speakers\u341.png" />
+    <Content Include="Content\images\2_speakers\u345.png" />
+    <Content Include="Content\images\2_speakers\u349.jpg" />
+    <Content Include="Content\images\2_speakers\u353.png" />
+    <Content Include="Content\images\2_speakers\u354.png" />
+    <Content Include="Content\images\2_speakers\u355.png" />
+    <Content Include="Content\images\2_speakers\u357.png" />
+    <Content Include="Content\images\2_speakers\u360.svg" />
+    <Content Include="Content\images\2_speakers\u361.png" />
+    <Content Include="Content\images\2_speakers\u365.svg" />
+    <Content Include="Content\images\2_speakers\u372.png" />
+    <Content Include="Content\images\2_speakers\u374.svg" />
+    <Content Include="Content\images\2_speakers\u377.png" />
+    <Content Include="Content\images\2_speakers\u384.svg" />
+    <Content Include="Content\images\2_speakers\u385.svg" />
+    <Content Include="Content\images\2_speakers\u388.svg" />
+    <Content Include="Content\images\2_speakers\u389.svg" />
+    <Content Include="Content\images\2_speakers\u390.svg" />
+    <Content Include="Content\images\2_speakers\u391.svg" />
+    <Content Include="Content\images\2_speakers\u392.svg" />
+    <Content Include="Content\images\2_speakers\u401.png" />
+    <Content Include="Content\images\2_speakers\u402.png" />
+    <Content Include="Content\images\2_speakers\u435.svg" />
+    <Content Include="Content\images\2_speakers\u447.png" />
+    <Content Include="Content\images\2_speakers\u457.png" />
+    <Content Include="Content\images\2_speakers\u481.svg" />
+    <Content Include="Content\images\2_speakers\u483.png" />
+    <Content Include="Content\images\2_speakers\u487.png" />
+    <Content Include="Content\images\2_speakers\u491.png" />
+    <Content Include="Content\images\2_speakers\u495.png" />
+    <Content Include="Content\images\2_speakers\u499.png" />
+    <Content Include="Content\images\2_speakers\u503.jpg" />
+    <Content Include="Content\images\2_speakers\u503.png" />
+    <Content Include="Content\images\2_speakers\u507.png" />
+    <Content Include="Content\images\2_speakers\u511.png" />
+    <Content Include="Content\images\2_speakers\u515.png" />
+    <Content Include="Content\images\2_speakers\u605.svg" />
+    <Content Include="Content\images\2_speakers\u606.svg" />
+    <Content Include="Content\images\2_speakers\u609.svg" />
+    <Content Include="Content\images\2_speakers\u612.svg" />
+    <Content Include="Content\images\2_speakers\u613.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u12.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u13.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u2.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u23.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u27.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u33.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u34.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u35.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u36.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u37.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u38.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u39.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u40.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u41.png" />
+    <Content Include="Content\images\3_speakers_registration\regen\u42.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u43.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u46.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u47.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u49.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u50.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u52.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u53.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u54.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u56.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u57.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u6.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u61.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u68.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u68_mouseOver.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u72.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u72_mouseOver.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u8.svg" />
+    <Content Include="Content\images\3_speakers_registration\regen\u9.png" />
+    <Content Include="Content\images\3_speakers_registration\u428.png" />
+    <Content Include="Content\images\3_speakers_registration\u430.png" />
+    <Content Include="Content\images\3_speakers_registration\u431.png" />
+    <Content Include="Content\images\3_speakers_registration\u435.png" />
+    <Content Include="Content\images\3_speakers_registration\u436.png" />
+    <Content Include="Content\images\3_speakers_registration\u437.svg" />
+    <Content Include="Content\images\3_speakers_registration\u438.png" />
+    <Content Include="Content\images\3_speakers_registration\u438.svg" />
+    <Content Include="Content\images\3_speakers_registration\u440.svg" />
+    <Content Include="Content\images\3_speakers_registration\u441.svg" />
+    <Content Include="Content\images\3_speakers_registration\u442.png" />
+    <Content Include="Content\images\3_speakers_registration\u442.svg" />
+    <Content Include="Content\images\3_speakers_registration\u448.svg" />
+    <Content Include="Content\images\3_speakers_registration\u449.png" />
+    <Content Include="Content\images\3_speakers_registration\u452.svg" />
+    <Content Include="Content\images\3_speakers_registration\u453.png" />
+    <Content Include="Content\images\3_speakers_registration\u455.png" />
+    <Content Include="Content\images\3_speakers_registration\u459.svg" />
+    <Content Include="Content\images\3_speakers_registration\u460.png" />
+    <Content Include="Content\images\3_speakers_registration\u461.png" />
+    <Content Include="Content\images\3_speakers_registration\u462.png" />
+    <Content Include="Content\images\3_speakers_registration\u463.png" />
+    <Content Include="Content\images\3_speakers_registration\u466.svg" />
+    <Content Include="Content\images\3_speakers_registration\u467.png" />
+    <Content Include="Content\images\3_speakers_registration\u467.svg" />
+    <Content Include="Content\images\3_speakers_registration\u468.svg" />
+    <Content Include="Content\images\3_speakers_registration\u474.png" />
+    <Content Include="Content\images\3_speakers_registration\u508.png" />
+    <Content Include="Content\images\3_speakers_registration\u514.svg" />
+    <Content Include="Content\images\3_speakers_registration\u578.png" />
+    <Content Include="Content\images\3_speakers_registration\u584.svg" />
+    <Content Include="Content\images\3_speakers_registration\u648.png" />
+    <Content Include="Content\images\3_speakers_registration\u658.svg" />
+    <Content Include="Content\images\3_speakers_registration\u673.png" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u125.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u125_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u125_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u125_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u136.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u136_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u136_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u136_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u139.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u139_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u139_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u139_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u140.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u140_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u140_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u140_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u143.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u143_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u143_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u143_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u149.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u149_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u149_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u149_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u150.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u150_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u150_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u150_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u155.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u155_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u155_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u155_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u156.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u156_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u156_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u156_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u359.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u359_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u359_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_1_u359_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u126.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u126_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u126_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u126_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u137.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u137_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u137_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u137_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u140.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u140_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u140_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u140_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u141.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u141_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u141_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u141_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u144.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u144_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u144_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u144_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u150.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u150_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u150_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u150_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u151.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u151_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u151_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u151_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u156.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u156_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u156_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u156_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u157.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u157_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u157_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u157_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u360.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u360_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u360_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\option_2_u360_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_1_u18.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_1_u18_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_1_u18_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_1_u18_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_2_u19.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_2_u19_disabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_2_u19_selected.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\option_2_u19_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u15.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u23.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u26.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u27.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u28.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u29.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u3.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u30.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u35.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u36.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u43.svg" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u50.png" />
+    <Content Include="Content\images\4_gallery_videos_\regen\u53.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u110.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u121.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u122.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u124.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u125.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u128.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u130.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u133.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u134.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u135.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u136.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u137.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u140.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u141.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u144.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u145.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u146.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u147.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u148.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u152.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u153.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u154.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u155.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u160.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u161.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u344.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u356.svg" />
+    <Content Include="Content\images\4_gallery_videos_\u364.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_1_u18.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_1_u18_disabled.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_1_u18_selected.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_1_u18_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_2_u19.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_2_u19_disabled.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_2_u19_selected.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\option_2_u19_selectedDisabled.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u10.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u11.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u12.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u13.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u13.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u14.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u15.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u15.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u16.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u17.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u18.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u19.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u20.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u23.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u26.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u27.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u28.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u29.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u3.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u3.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u30.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u32.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u35.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u35_mouseOver.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u36.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u36.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u39.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u39_mouseOver.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u4.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u43.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u5.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u50.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u50.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u51.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u53.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u54.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u55.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u57.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u58.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u6.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u60.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u61.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u62.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u64.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u65.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u69.svg" />
+    <Content Include="Content\images\4_gallery__images_\regen\u7.png" />
+    <Content Include="Content\images\4_gallery__images_\regen\u71.svg" />
+    <Content Include="Content\images\4_gallery__images_\u191.png" />
+    <Content Include="Content\images\4_gallery__images_\u192.png" />
+    <Content Include="Content\images\4_gallery__images_\u193.png" />
+    <Content Include="Content\images\4_gallery__images_\u194.png" />
+    <Content Include="Content\images\4_gallery__images_\u195.png" />
+    <Content Include="Content\images\4_gallery__images_\u196.png" />
+    <Content Include="Content\images\4_gallery__images_\u197.png" />
+    <Content Include="Content\images\4_gallery__images_\u198.png" />
+    <Content Include="Content\images\4_gallery__images_\u215.png" />
+    <Content Include="Content\images\4_gallery__images_\u216.png" />
+    <Content Include="Content\images\4_gallery__images_\u217.png" />
+    <Content Include="Content\images\4_gallery__images_\u218.png" />
+    <Content Include="Content\images\4_gallery__images_\u219.png" />
+    <Content Include="Content\images\4_gallery__images_\u220.png" />
+    <Content Include="Content\images\4_gallery__images_\u221.png" />
+    <Content Include="Content\images\4_gallery__images_\u222.png" />
+    <Content Include="Content\images\4_gallery__images_\u223.png" />
+    <Content Include="Content\images\4_gallery__images_\u224.png" />
+    <Content Include="Content\images\4_gallery__images_\u225.png" />
+    <Content Include="Content\images\4_gallery__images_\u226.png" />
+    <Content Include="Content\images\4_gallery__images_\u227.png" />
+    <Content Include="Content\images\4_gallery__images_\u228.png" />
+    <Content Include="Content\images\4_gallery__images_\u229.png" />
+    <Content Include="Content\images\4_gallery__images_\u230.png" />
+    <Content Include="Content\images\4_gallery__images_\u231.png" />
+    <Content Include="Content\images\4_gallery__images_\u232.png" />
+    <Content Include="Content\images\4_gallery__images_\u233.png" />
+    <Content Include="Content\images\4_gallery__images_\u233.svg" />
+    <Content Include="Content\images\4_gallery__images_\u239.png" />
+    <Content Include="Content\images\4_gallery__images_\u240.png" />
+    <Content Include="Content\images\4_gallery__images_\u241.png" />
+    <Content Include="Content\images\4_gallery__images_\u242.png" />
+    <Content Include="Content\images\4_gallery__images_\u243.png" />
+    <Content Include="Content\images\4_gallery__images_\u244.png" />
+    <Content Include="Content\images\4_gallery__images_\u245.png" />
+    <Content Include="Content\images\4_gallery__images_\u246.png" />
+    <Content Include="Content\images\4_gallery__images_\u252.svg" />
+    <Content Include="Content\images\4_gallery__images_\u256.png" />
+    <Content Include="Content\images\4_gallery__images_\u257.png" />
+    <Content Include="Content\images\4_gallery__images_\u258.png" />
+    <Content Include="Content\images\4_gallery__images_\u259.png" />
+    <Content Include="Content\images\4_gallery__images_\u260.png" />
+    <Content Include="Content\images\4_gallery__images_\u261.png" />
+    <Content Include="Content\images\4_gallery__images_\u262.png" />
+    <Content Include="Content\images\4_gallery__images_\u262.svg" />
+    <Content Include="Content\images\4_gallery__images_\u263.svg" />
+    <Content Include="Content\images\4_gallery__images_\u276.svg" />
+    <Content Include="Content\images\4_gallery__images_\u277.svg" />
+    <Content Include="Content\images\5_about_us\regen\u1.png" />
+    <Content Include="Content\images\5_about_us\regen\u10.svg" />
+    <Content Include="Content\images\5_about_us\regen\u10_mouseOver.svg" />
+    <Content Include="Content\images\5_about_us\regen\u12.svg" />
+    <Content Include="Content\images\5_about_us\regen\u12_mouseOver.svg" />
+    <Content Include="Content\images\5_about_us\regen\u14.png" />
+    <Content Include="Content\images\5_about_us\regen\u16.svg" />
+    <Content Include="Content\images\5_about_us\regen\u21.svg" />
+    <Content Include="Content\images\5_about_us\regen\u22.svg" />
+    <Content Include="Content\images\5_about_us\regen\u24.png" />
+    <Content Include="Content\images\5_about_us\regen\u25.svg" />
+    <Content Include="Content\images\5_about_us\regen\u26.png" />
+    <Content Include="Content\images\5_about_us\regen\u27.png" />
+    <Content Include="Content\images\5_about_us\regen\u28.png" />
+    <Content Include="Content\images\5_about_us\regen\u28.svg" />
+    <Content Include="Content\images\5_about_us\regen\u29.png" />
+    <Content Include="Content\images\5_about_us\regen\u29.svg" />
+    <Content Include="Content\images\5_about_us\regen\u29_mouseOver.svg" />
+    <Content Include="Content\images\5_about_us\regen\u30.png" />
+    <Content Include="Content\images\5_about_us\regen\u31.png" />
+    <Content Include="Content\images\5_about_us\regen\u31.svg" />
+    <Content Include="Content\images\5_about_us\regen\u32.svg" />
+    <Content Include="Content\images\5_about_us\regen\u33.png" />
+    <Content Include="Content\images\5_about_us\regen\u34.png" />
+    <Content Include="Content\images\5_about_us\regen\u35.png" />
+    <Content Include="Content\images\5_about_us\regen\u36.png" />
+    <Content Include="Content\images\5_about_us\regen\u36.svg" />
+    <Content Include="Content\images\5_about_us\regen\u37.png" />
+    <Content Include="Content\images\5_about_us\regen\u39.svg" />
+    <Content Include="Content\images\5_about_us\regen\u4.png" />
+    <Content Include="Content\images\5_about_us\regen\u42.svg" />
+    <Content Include="Content\images\5_about_us\regen\u43.svg" />
+    <Content Include="Content\images\5_about_us\regen\u44.png" />
+    <Content Include="Content\images\5_about_us\regen\u44.svg" />
+    <Content Include="Content\images\5_about_us\regen\u45.svg" />
+    <Content Include="Content\images\5_about_us\regen\u46.svg" />
+    <Content Include="Content\images\5_about_us\regen\u47.svg" />
+    <Content Include="Content\images\5_about_us\regen\u47_mouseOver.svg" />
+    <Content Include="Content\images\5_about_us\regen\u48.svg" />
+    <Content Include="Content\images\5_about_us\regen\u49.svg" />
+    <Content Include="Content\images\5_about_us\regen\u5.png" />
+    <Content Include="Content\images\5_about_us\regen\u50.svg" />
+    <Content Include="Content\images\5_about_us\regen\u51.svg" />
+    <Content Include="Content\images\5_about_us\regen\u52.svg" />
+    <Content Include="Content\images\5_about_us\regen\u53.svg" />
+    <Content Include="Content\images\5_about_us\regen\u54.svg" />
+    <Content Include="Content\images\5_about_us\regen\u55.svg" />
+    <Content Include="Content\images\5_about_us\regen\u57.svg" />
+    <Content Include="Content\images\5_about_us\regen\u59.svg" />
+    <Content Include="Content\images\5_about_us\regen\u6.png" />
+    <Content Include="Content\images\5_about_us\regen\u7.png" />
+    <Content Include="Content\images\5_about_us\regen\u8.png" />
+    <Content Include="Content\images\5_about_us\regen\u9.png" />
+    <Content Include="Content\images\5_about_us\u508.png" />
+    <Content Include="Content\images\5_about_us\u510.svg" />
+    <Content Include="Content\images\5_about_us\u525.png" />
+    <Content Include="Content\images\5_about_us\u527.svg" />
+    <Content Include="Content\images\5_about_us\u529.png" />
+    <Content Include="Content\images\5_about_us\u531.svg" />
+    <Content Include="Content\images\5_about_us\u536.png" />
+    <Content Include="Content\images\5_about_us\u538.svg" />
+    <Content Include="Content\images\5_about_us\u577.png" />
+    <Content Include="Content\images\5_about_us\u582.png" />
+    <Content Include="Content\images\5_about_us\u585.png" />
+    <Content Include="Content\images\5_about_us\u587.svg" />
+    <Content Include="Content\images\5_about_us\u590.png" />
+    <Content Include="Content\images\5_about_us\u592.svg" />
+    <Content Include="Content\images\5_about_us\u595.png" />
+    <Content Include="Content\images\5_about_us\u597.svg" />
+    <Content Include="Content\images\5_about_us\u599.png" />
+    <Content Include="Content\images\5_about_us\u601.svg" />
+    <Content Include="Content\images\5_about_us\u604.png" />
+    <Content Include="Content\images\5_about_us\u606.png" />
+    <Content Include="Content\images\5_about_us\u607.png" />
+    <Content Include="Content\images\5_about_us\u608.png" />
+    <Content Include="Content\images\5_about_us\u617.png" />
+    <Content Include="Content\images\5_about_us\u619.png" />
+    <Content Include="Content\images\5_about_us\u619.svg" />
+    <Content Include="Content\images\5_about_us\u620.png" />
+    <Content Include="Content\images\5_about_us\u621.png" />
+    <Content Include="Content\images\5_about_us\u621.svg" />
+    <Content Include="Content\images\5_about_us\u622.svg" />
+    <Content Include="Content\images\5_about_us\u623.svg" />
+    <Content Include="Content\images\5_about_us\u654.png" />
+    <Content Include="Content\images\5_about_us\u667.png" />
+    <Content Include="Content\images\5_about_us\u669.svg" />
+    <Content Include="Content\images\5_about_us\u729.svg" />
+    <Content Include="Content\images\5_about_us\u772.png" />
+    <Content Include="Content\images\5_about_us\u785.png" />
+    <Content Include="Content\images\5_about_us\u787.svg" />
+    <Content Include="Content\images\6_contact\regen\u14.png" />
+    <Content Include="Content\images\6_contact\regen\u24.png" />
+    <Content Include="Content\images\6_contact\regen\u25.png" />
+    <Content Include="Content\images\6_contact\regen\u26.png" />
+    <Content Include="Content\images\6_contact\regen\u27.png" />
+    <Content Include="Content\images\6_contact\regen\u28.png" />
+    <Content Include="Content\images\6_contact\regen\u36.png" />
+    <Content Include="Content\images\6_contact\regen\u37.png" />
+    <Content Include="Content\images\6_contact\regen\u39.svg" />
+    <Content Include="Content\images\6_contact\regen\u40.svg" />
+    <Content Include="Content\images\6_contact\regen\u40_mouseOver.svg" />
+    <Content Include="Content\images\6_contact\regen\u8.svg" />
+    <Content Include="Content\images\6_contact\u569.svg" />
+    <Content Include="Content\images\6_contact\u575.png" />
+    <Content Include="Content\images\6_contact\u593.svg" />
+    <Content Include="Content\images\6_contact\u597.svg" />
+    <Content Include="Content\images\6_contact\u599.png" />
+    <Content Include="Content\images\6_contact\u603.png" />
+    <Content Include="Content\images\6_contact\u604.svg" />
+    <Content Include="Content\images\6_contact\u610.png" />
+    <Content Include="Content\images\6_contact\u644.svg" />
+    <Content Include="Content\images\6_contact\u648.svg" />
+    <Content Include="Content\images\6_contact\u649.svg" />
+    <Content Include="Content\images\6_contact\u650.png" />
+    <Content Include="Content\images\6_contact\u650.svg" />
+    <Content Include="Content\images\6_contact\u654.png" />
+    <Content Include="Content\images\6_contact\u655.png" />
+    <Content Include="Content\images\6_contact\u656.png" />
+    <Content Include="Content\images\6_contact\u667.svg" />
+    <Content Include="Content\images\6_contact\u673.png" />
+    <Content Include="Content\images\6_contact\u673.svg" />
+    <Content Include="Content\images\6_contact\u674.svg" />
+    <Content Include="Content\images\6_contact\u675.svg" />
+    <Content Include="Content\images\6_contact\u679.png" />
+    <Content Include="Content\images\6_contact\u680.png" />
+    <Content Include="Content\images\6_contact\u681.png" />
+    <Content Include="Content\images\6_contact\u721.svg" />
+    <Content Include="Content\images\6_contact\u727.png" />
+    <Content Include="Content\images\6_contact\u787.svg" />
+    <Content Include="Content\images\6_contact\u793.png" />
+    <Content Include="Content\images\6_contact\u863.svg" />
+    <Content Include="Content\images\6_contact\u869.png" />
+    <Content Include="Content\images\events\calendar_icon_u1049.svg" />
+    <Content Include="Content\images\events\next_u1090.svg" />
+    <Content Include="Content\images\events\next_u1131_mouseOver.svg" />
+    <Content Include="Content\images\events\previous_u1091.svg" />
+    <Content Include="Content\images\events\previous_u1091_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\bottom_divider_line_u215.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u15.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u25.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u30.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u43.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u55.svg" />
+    <Content Include="Content\images\events\regen\calendar_icon_u62.svg" />
+    <Content Include="Content\images\events\regen\close_icon_u212.svg" />
+    <Content Include="Content\images\events\regen\close_icon_u212_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u103.svg" />
+    <Content Include="Content\images\events\regen\next_u107_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u112_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u125_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u137_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u144_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\next_u56.svg" />
+    <Content Include="Content\images\events\regen\next_u66.svg" />
+    <Content Include="Content\images\events\regen\next_u71.svg" />
+    <Content Include="Content\images\events\regen\next_u84.svg" />
+    <Content Include="Content\images\events\regen\next_u96.svg" />
+    <Content Include="Content\images\events\regen\next_u97_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u104.svg" />
+    <Content Include="Content\images\events\regen\previous_u104_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u57.svg" />
+    <Content Include="Content\images\events\regen\previous_u57_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u67.svg" />
+    <Content Include="Content\images\events\regen\previous_u67_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u72.svg" />
+    <Content Include="Content\images\events\regen\previous_u72_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u85.svg" />
+    <Content Include="Content\images\events\regen\previous_u85_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\previous_u97.svg" />
+    <Content Include="Content\images\events\regen\previous_u97_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\thumbnail_image_u219.svg" />
+    <Content Include="Content\images\events\regen\u12.svg" />
+    <Content Include="Content\images\events\regen\u13.svg" />
+    <Content Include="Content\images\events\regen\u146.png" />
+    <Content Include="Content\images\events\regen\u149.svg" />
+    <Content Include="Content\images\events\regen\u149_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\u16.svg" />
+    <Content Include="Content\images\events\regen\u163.svg" />
+    <Content Include="Content\images\events\regen\u164.svg" />
+    <Content Include="Content\images\events\regen\u169.svg" />
+    <Content Include="Content\images\events\regen\u17.png" />
+    <Content Include="Content\images\events\regen\u18.png" />
+    <Content Include="Content\images\events\regen\u180.svg" />
+    <Content Include="Content\images\events\regen\u181.svg" />
+    <Content Include="Content\images\events\regen\u19.svg" />
+    <Content Include="Content\images\events\regen\u20.svg" />
+    <Content Include="Content\images\events\regen\u200.svg" />
+    <Content Include="Content\images\events\regen\u201.svg" />
+    <Content Include="Content\images\events\regen\u202.svg" />
+    <Content Include="Content\images\events\regen\u20_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\u21.svg" />
+    <Content Include="Content\images\events\regen\u212.svg" />
+    <Content Include="Content\images\events\regen\u217.svg" />
+    <Content Include="Content\images\events\regen\u21_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\u22.svg" />
+    <Content Include="Content\images\events\regen\u23.svg" />
+    <Content Include="Content\images\events\regen\u249.svg" />
+    <Content Include="Content\images\events\regen\u250.svg" />
+    <Content Include="Content\images\events\regen\u254.svg" />
+    <Content Include="Content\images\events\regen\u255.svg" />
+    <Content Include="Content\images\events\regen\u27.svg" />
+    <Content Include="Content\images\events\regen\u35.png" />
+    <Content Include="Content\images\events\regen\u38.svg" />
+    <Content Include="Content\images\events\regen\u38_mouseOver.svg" />
+    <Content Include="Content\images\events\regen\u5.png" />
+    <Content Include="Content\images\events\regen\u6.png" />
+    <Content Include="Content\images\events\regen\u7.png" />
+    <Content Include="Content\images\events\regen\u8.png" />
+    <Content Include="Content\images\events\regen\u9.png" />
+    <Content Include="Content\images\events\u1234.svg" />
+    <Content Include="Content\images\events\u1283.svg" />
+    <Content Include="Content\images\events\u1288.svg" />
+    <Content Include="Content\images\events\u846.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u18.png" />
+    <Content Include="Content\images\event_registration_page\regen\u19.png" />
+    <Content Include="Content\images\event_registration_page\regen\u2.png" />
+    <Content Include="Content\images\event_registration_page\regen\u20.png" />
+    <Content Include="Content\images\event_registration_page\regen\u21.png" />
+    <Content Include="Content\images\event_registration_page\regen\u22.png" />
+    <Content Include="Content\images\event_registration_page\regen\u27.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u28.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u31.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u34.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u35.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u37.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u38.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u42.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u43.png" />
+    <Content Include="Content\images\event_registration_page\regen\u51.png" />
+    <Content Include="Content\images\event_registration_page\regen\u54.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u54_mouseOver.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u6.svg" />
+    <Content Include="Content\images\event_registration_page\regen\u8.svg" />
+    <Content Include="Content\images\event_registration_page\u508.png" />
+    <Content Include="Content\images\event_registration_page\u512.png" />
+    <Content Include="Content\images\event_registration_page\u513.png" />
+    <Content Include="Content\images\event_registration_page\u515.png" />
+    <Content Include="Content\images\event_registration_page\u526.png" />
+    <Content Include="Content\images\event_registration_page\u531.png" />
+    <Content Include="Content\images\event_registration_page\u536.png" />
+    <Content Include="Content\images\event_registration_page\u537.png" />
+    <Content Include="Content\images\event_registration_page\u537.svg" />
+    <Content Include="Content\images\event_registration_page\u538.png" />
+    <Content Include="Content\images\event_registration_page\u539.png" />
+    <Content Include="Content\images\event_registration_page\u544.svg" />
+    <Content Include="Content\images\event_registration_page\u551.svg" />
+    <Content Include="Content\images\event_registration_page\u553.png" />
+    <Content Include="Content\images\event_registration_page\u560.png" />
+    <Content Include="Content\images\event_registration_page\u561.png" />
+    <Content Include="Content\images\event_registration_page\u562.png" />
+    <Content Include="Content\images\event_registration_page\u581.svg" />
+    <Content Include="Content\images\event_registration_page\u585.png" />
+    <Content Include="Content\images\event_registration_page\u588.svg" />
+    <Content Include="Content\images\event_registration_page\u597.png" />
+    <Content Include="Content\images\event_registration_page\u679.png" />
+    <Content Include="Content\images\page_1\regen\u14.png" />
+    <Content Include="Content\images\page_1\regen\u2.svg" />
+    <Content Include="Content\images\page_1\regen\u25.png" />
+    <Content Include="Content\images\page_1\regen\u26.png" />
+    <Content Include="Content\images\page_1\regen\u27.png" />
+    <Content Include="Content\images\page_1\regen\u28.png" />
+    <Content Include="Content\images\page_1\regen\u29.png" />
+    <Content Include="Content\images\page_1\regen\u32.svg" />
+    <Content Include="Content\images\page_1\regen\u33.svg" />
+    <Content Include="Content\images\page_1\regen\u36.svg" />
+    <Content Include="Content\images\page_1\regen\u39.svg" />
+    <Content Include="Content\images\page_1\regen\u4.svg" />
+    <Content Include="Content\images\page_1\regen\u40.svg" />
+    <Content Include="Content\images\page_1\regen\u42.svg" />
+    <Content Include="Content\images\page_1\regen\u43.svg" />
+    <Content Include="Content\images\page_1\regen\u47.svg" />
+    <Content Include="Content\images\page_1\regen\u55.png" />
+    <Content Include="Content\images\page_1\regen\u58.svg" />
+    <Content Include="Content\images\page_1\regen\u58_mouseOver.svg" />
+    <Content Include="Content\images\page_1\regen\u7.png" />
+    <Content Include="Content\images\speaker_popup\regen\u14.png" />
+    <Content Include="Content\images\speaker_popup\regen\u2.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u23.png" />
+    <Content Include="Content\images\speaker_popup\regen\u24.png" />
+    <Content Include="Content\images\speaker_popup\regen\u25.png" />
+    <Content Include="Content\images\speaker_popup\regen\u26.png" />
+    <Content Include="Content\images\speaker_popup\regen\u27.png" />
+    <Content Include="Content\images\speaker_popup\regen\u28.png" />
+    <Content Include="Content\images\speaker_popup\regen\u29.png" />
+    <Content Include="Content\images\speaker_popup\regen\u30.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u31.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u32.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u33.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u34.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u36.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u37.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u38.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u39.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u4.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u40.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u41.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u42.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u43.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u45.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u47.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u53.png" />
+    <Content Include="Content\images\speaker_popup\regen\u55.png" />
+    <Content Include="Content\images\speaker_popup\regen\u56.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u56_mouseOver.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u58.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u58_mouseOver.svg" />
+    <Content Include="Content\images\speaker_popup\regen\u7.png" />
+    <Content Include="Content\images\speaker_popup\regen\u70.png" />
+    <Content Include="Content\images\speaker_popup\regen\u72.png" />
+    <Content Include="Content\images\speaker_popup\u934.svg" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\plugins\debug\debug.js" />
+    <Content Include="Content\plugins\debug\styles\debug.css" />
+    <Content Include="Content\plugins\debug\styles\images\console_panel_off.svg" />
+    <Content Include="Content\plugins\debug\styles\images\console_panel_on.svg" />
+    <Content Include="Content\plugins\page_notes\page_notes.js" />
+    <Content Include="Content\plugins\page_notes\styles\images\notes_panel_off.svg" />
+    <Content Include="Content\plugins\page_notes\styles\images\notes_panel_on.svg" />
+    <Content Include="Content\plugins\page_notes\styles\page_notes.css" />
+    <Content Include="Content\plugins\recordplay\recordplay.js" />
+    <Content Include="Content\plugins\recordplay\styles\recordplay.css" />
+    <Content Include="Content\plugins\sitemap\sitemap.js" />
+    <Content Include="Content\plugins\sitemap\styles\images\back_keys.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\closed_item.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\flow.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\folder_closed_blue.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\forward_keys.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\left_arrow.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\open_item.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\page_lt_grey.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\right_arrow.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\search_off.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\search_on.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\sitemap_panel_off.svg" />
+    <Content Include="Content\plugins\sitemap\styles\images\sitemap_panel_on.svg" />
+    <Content Include="Content\plugins\sitemap\styles\sitemap.css" />
+    <Content Include="Content\resources\chrome\allow-access.png" />
+    <Content Include="Content\resources\chrome\axure_logo.png" />
+    <Content Include="Content\resources\chrome\chrome.html" />
+    <Content Include="Content\resources\chrome\details.png" />
+    <Content Include="Content\resources\chrome\extensions.png" />
+    <Content Include="Content\resources\chrome\firefox.html" />
+    <Content Include="Content\resources\chrome\preview-rp.png" />
+    <Content Include="Content\resources\chrome\safari.html" />
+    <Content Include="Content\resources\chrome\safari_advanced.png" />
+    <Content Include="Content\resources\chrome\safari_restrictions.png" />
+    <Content Include="Content\resources\chrome\splitter.gif" />
+    <Content Include="Content\resources\chrome\splitter.png" />
+    <Content Include="Content\resources\css\axure_rp_page.css" />
+    <Content Include="Content\resources\css\default.css" />
+    <Content Include="Content\resources\css\images\images.html" />
+    <Content Include="Content\resources\css\images\newwindow.gif" />
+    <Content Include="Content\resources\css\images\note.gif" />
+    <Content Include="Content\resources\css\images\touch.cur" />
+    <Content Include="Content\resources\css\images\touch.svg" />
+    <Content Include="Content\resources\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\resources\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\resources\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\resources\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\resources\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\resources\css\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\resources\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\resources\css\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\resources\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\resources\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\resources\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\resources\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\resources\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\resources\css\jquery-ui-themes.css" />
+    <Content Include="Content\resources\css\previewfonts.css" />
+    <Content Include="Content\resources\css\previewfonts\SourceSansPro-OpenFontLicense.txt" />
+    <Content Include="Content\resources\css\reset.css" />
+    <Content Include="Content\resources\expand.html" />
+    <Content Include="Content\resources\images\axure9_logo.svg" />
+    <Content Include="Content\resources\images\axure_logo.png" />
+    <Content Include="Content\resources\images\axure_logo.svg" />
+    <Content Include="Content\resources\images\caret_down.svg" />
+    <Content Include="Content\resources\images\caret_down_off.svg" />
+    <Content Include="Content\resources\images\close_x.svg" />
+    <Content Include="Content\resources\images\close_x_minimize.svg" />
+    <Content Include="Content\resources\images\divider.png" />
+    <Content Include="Content\resources\images\divider.svg" />
+    <Content Include="Content\resources\images\exit.svg" />
+    <Content Include="Content\resources\images\favicon_play.ico" />
+    <Content Include="Content\resources\images\overflow-icon.svg" />
+    <Content Include="Content\resources\images\overflow_checkmark.svg" />
+    <Content Include="Content\resources\images\overflow_icon_off.svg" />
+    <Content Include="Content\resources\images\refresh.svg" />
+    <Content Include="Content\resources\images\resize.svg" />
+    <Content Include="Content\resources\images\return.svg" />
+    <Content Include="Content\resources\images\transparent.gif" />
+    <Content Include="Content\resources\images\views-icon.svg" />
+    <Content Include="Content\resources\Other.html" />
+    <Content Include="Content\resources\reload.html" />
+    <Content Include="Content\resources\scripts\axure\action.js" />
+    <Content Include="Content\resources\scripts\axure\adaptive.js" />
+    <Content Include="Content\resources\scripts\axure\annotation.js" />
+    <Content Include="Content\resources\scripts\axure\axQuery.js" />
+    <Content Include="Content\resources\scripts\axure\axQuery.std.js" />
+    <Content Include="Content\resources\scripts\axure\doc.js" />
+    <Content Include="Content\resources\scripts\axure\drag.js" />
+    <Content Include="Content\resources\scripts\axure\events.js" />
+    <Content Include="Content\resources\scripts\axure\expr.js" />
+    <Content Include="Content\resources\scripts\axure\flyout.js" />
+    <Content Include="Content\resources\scripts\axure\geometry.js" />
+    <Content Include="Content\resources\scripts\axure\globals.js" />
+    <Content Include="Content\resources\scripts\axure\ie.js" />
+    <Content Include="Content\resources\scripts\axure\init.temp.js" />
+    <Content Include="Content\resources\scripts\axure\ios.js" />
+    <Content Include="Content\resources\scripts\axure\jquery.nicescroll.min.js" />
+    <Content Include="Content\resources\scripts\axure\legacy.js" />
+    <Content Include="Content\resources\scripts\axure\math.js" />
+    <Content Include="Content\resources\scripts\axure\model.js" />
+    <Content Include="Content\resources\scripts\axure\move.js" />
+    <Content Include="Content\resources\scripts\axure\recording.js" />
+    <Content Include="Content\resources\scripts\axure\repeater.js" />
+    <Content Include="Content\resources\scripts\axure\sto.js" />
+    <Content Include="Content\resources\scripts\axure\style.js" />
+    <Content Include="Content\resources\scripts\axure\tree.js" />
+    <Content Include="Content\resources\scripts\axure\utils.temp.js" />
+    <Content Include="Content\resources\scripts\axure\variables.js" />
+    <Content Include="Content\resources\scripts\axure\viewer.js" />
+    <Content Include="Content\resources\scripts\axure\visibility.js" />
+    <Content Include="Content\resources\scripts\axutils.js" />
+    <Content Include="Content\resources\scripts\jquery-1.7.1.min.js" />
+    <Content Include="Content\resources\scripts\jquery-3.2.1.min.js" />
+    <Content Include="Content\resources\scripts\jquery-ui-1.8.10.custom.min.js" />
+    <Content Include="Content\resources\scripts\messagecenter.js" />
+    <Content Include="Content\resources\scripts\player\axplayer.js" />
+    <Content Include="Content\resources\scripts\player\init.js" />
+    <Content Include="Content\resources\scripts\player\splitter.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\resources\chrome\axure-chrome-extension.crx" />
+    <Content Include="Content\resources\css\previewfonts\SourceSansPro-Regular.woff2" />
+    <Content Include="Content\resources\css\previewfonts\SourceSansPro-Semibold.woff2" />
+    <Content Include="PyramidTimesWebEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PyramidTimesWebEntities.edmx</DependentUpon>
+      <LastGenOutput>PyramidTimesWebEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PyramidTimesWebEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PyramidTimesWebEntities.edmx</DependentUpon>
+      <LastGenOutput>PyramidTimesWebEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="PyramidTimesWebEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PyramidTimesWebEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="PyramidTimesWebEntities.edmx.diagram">
+      <DependentUpon>PyramidTimesWebEntities.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Speakers.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\SpeakerRegistration.cshtml" />
+    <Content Include="Views\Home\Events.cshtml" />
+    <Content Include="Views\Home\Images.cshtml" />
+    <Content Include="Views\Home\Videos.cshtml" />
+    <Content Include="Views\Home\EventRegistration.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\CreateEvents.cshtml" />
+    <Content Include="Views\Admin\PastEvents.cshtml" />
+    <Content Include="Views\Home\SpeakerDeatils.cshtml" />
+    <Content Include="Views\Home\_eventsmodel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62774</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44348/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
